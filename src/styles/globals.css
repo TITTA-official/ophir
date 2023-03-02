@@ -22,3 +22,13 @@ img{
   background-size: cover;
   @apply text-white mb-32 pt-20 pb-4 ;
 }
+
+.card{
+  @apply shadow-md rounded py-10 px-10 text-center;
+}
+
+.banner2{
+  background: url(/images/banner2.jpeg) center;
+  background-size: cover;
+  @apply text-white mb-32 pt-20 pb-4
+}
