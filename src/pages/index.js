@@ -156,7 +156,7 @@ export default function Home() {
 
         <section className='banner2 z-20 relative w-full text-center'>
           <div className="overlay -z-10 w-full  absolute bg-[rgba(0,0,0,0.62)] top-0 bottom-0"></div>
-          <div className="z-20 text-[1.4rem] font-bold headingFont">Arctic Mini Air Cooler Specifications</div>
+          <div className="z-20 text-[1.4rem] font-bold headingFont px-4">Arctic Mini Air Cooler Specifications</div>
           <div className="z-20 mt-5 font-light text-sm opacity-70 bodyFont">Learn more about our product in details below.</div>
 
           <div className="font-bold text-lg mt-5 text-left mx-4 headingFont">Portability</div>
