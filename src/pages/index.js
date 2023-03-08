@@ -49,7 +49,7 @@ export default function Home() {
         </section>
 
       
-        <Carousel autoPlay={true} interval={3000}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
+        <Carousel autoPlay={true} showIndicators={false} interval={5500}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
               <div className="carousel-promo px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1.2] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
