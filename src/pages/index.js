@@ -30,36 +30,36 @@ export default function Home() {
       
         <div className='sticky top-0 px-4 py-5 flex justify-between items-center w-full z-50 bg-white shadow-md'>
           <div className="navbrand">
-            <Image src='/images/logo.png' width={200} height={100}/>
+            <Image src='/images/logo.png' className='w-[80%]' width={200} height={100}/>
           </div>
           <div className="menu cursor-pointer">
-            <HiOutlineMenuAlt3 color='#ed3030' size='2.5rem'/>
+            <HiOutlineMenuAlt3 color='#ed3030' size='2.25rem'/>
           </div>
        
         </div>
       <main className=' text-[#3A3A3A]'>
         <section className="hero w-full flex flex-col gap-y-7 items-center mt-14 px-4">
           <h4 className='text-lg bodyFont text-[#ed3030] font-bold text-center'>Why suffer through the sweltering daily heat?</h4>
-          <h1 className='text-4xl headingFont text-center'>When you can get our Mini Air Cooler</h1>
+          <h1 className='text-3xl headingFont text-center'>When you can get our Mini Air Cooler</h1>
           <p className='px-4 bodyFont text-center leading-relaxed opacity-60'>Mini Air Cooler will provide you with the ultimate comfort and relief from the heat allowing you stay cool and comfortale no matter where you are!</p>
           <button className="cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
-          <div className="fanpics w-full -mt-10 -z-10">
+          <div className="fanpics w-[80%] -mt-10 -z-10">
             <Image src="/images/fan.png" width={100} height={100}/>
           </div>
         </section>
 
       
-        <Carousel showIndicators={true} autoPlay={true} interval={3000}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={true}>
-              <div className="carousel-promo mt-12 px-4 relative z-10 text-left">
+        <Carousel autoPlay={true} interval={3000}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
+              <div className="carousel-promo px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
-                <h2 className='text-4xl leading-[1] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
-                <p className='text-lg leading-[1.5] mb-5 z-10 bodyFont'>The Arctic Air Mini Air Cooler Ultra is a compact and portable air cooling device that is designed to provide a cool and refreshing breeze during hot days. This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
+                <h2 className='text-[1.75rem] leading-[1.2] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
+                <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>The Arctic Air Mini Air Cooler Ultra is a compact and portable air cooling device that is designed to provide a cool and refreshing breeze during hot days. This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
                 <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
               </div>
-              <div className="carousel-promo mt-12 px-4 relative z-10 text-left">
+              <div className="carousel-promo px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
-                <h2 className='text-4xl leading-[1] mb-5 z-10 headingFont'>Sleek and Modern design.</h2>
-                <p className='text-lg leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease. It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
+                <h2 className='text-[1.75rem] leading-[1] mb-5 z-10 headingFont'>Sleek and Modern design.</h2>
+                <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease. It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
                 <AiFillPlayCircle color='#ed3030' size='5.35rem'/>
               </div>
         </Carousel>
@@ -75,14 +75,16 @@ export default function Home() {
 
         <section>
           <div className="w-full -mt-20 px-4">
-              <div>
-                <Image src="/images/fan.png" width={100} height={100}/>
-                <h1 className='text-2xl w-full font-bold mt-5 mb-5 headingFont'>Compact & Lightweight</h1>
+              <div className='w-full flex items-center flex-col'>
+                <Image className='w-[80%]' src="/images/fan.png" width={100} height={100}/>
+                <h1 className='text-xl w-full text-left font-bold mt-5 mb-5 headingFont'>Compact & Lightweight</h1>
               </div>
-              <div>
+              <div >
                 <p className='leading-relaxed opacity-60 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease.</p>
-                <Image className='mt-10' src="/images/fan.png" width={100} height={100}/>
-                <h1 className='text-2xl w-full  font-bold mb-5 mt-5 headingFont'>Charges very fast</h1>
+                <div className="mt-10 flex justify-center">
+                  <Image className='w-[80%]' src="/images/fan.png" width={100} height={100}/>
+                </div>
+                <h1 className='text-xl w-full  font-bold mb-5 mt-5 headingFont'>Charges Easily</h1>
                 <p className='leading-relaxed opacity-60 bodyFont'> It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
               </div>
             </div>
@@ -153,28 +155,28 @@ export default function Home() {
         </section>
 
         <section className='banner2 z-20 relative w-full text-center'>
-          <div className="overlay -z-10 w-full absolute bg-[rgba(0,0,0,0.4)] top-0 bottom-0"></div>
-          <div className="z-20 text-2xl font-bold headingFont">Arctic Mini Air Cooler specifications</div>
-          <div className="z-20 mt-5 font-light text-lg opacity-70 bodyFont">Learn more about our product in details below.</div>
+          <div className="overlay -z-10 w-full  absolute bg-[rgba(0,0,0,0.62)] top-0 bottom-0"></div>
+          <div className="z-20 text-[1.4rem] font-bold headingFont">Arctic Mini Air Cooler Specifications</div>
+          <div className="z-20 mt-5 font-light text-sm opacity-70 bodyFont">Learn more about our product in details below.</div>
 
-          <div className="font-bold text-xl mt-7 text-left mx-4 headingFont">Portability</div>
-          <p className="mt-4 font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers are small and lightweight, making them easy to move around.</p>
-          <p className=" mt-4 font-light text-left leading-relaxed bodyFont mx-4">They can be easily transported from one room to another or taken outdoors</p>
-          <p className="mt-4 font-light text-left leading-relaxed bodyFont mx-4">This makes them ideal for small spaces like bedrooms, offices, and outdoor areas.</p>
-          <div className="font-bold text-xl mt-7 text-left headingFont mx-4">Low Maintenance</div>
-          <p className="mt-4 font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers require very little maintenance compared to traditional air conditioners.</p>
-          <p className=" mt-4 font-light text-left leading-relaxed bodyFont mx-4">They do not have filters that need to be replaced, and they have a simple water tank that needs to be refilled regularly.</p>
-          <div className="font-bold text-xl mt-7 text-left headingFont mx-4">Cost-Effective</div>
-          <p className="mt-4 font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers are generally less expensive than traditional air conditioners, making them a cost-effective cooling solution for small spaces.</p>
-          <p className=" mt-4 font-light text-left leading-relaxed bodyFont mx-4">They also do not require professional installation, which can save on installation costs.</p>
+          <div className="font-bold text-lg mt-5 text-left mx-4 headingFont">Portability</div>
+          <p className="mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers are small and lightweight, making them easy to move around.</p>
+          <p className=" mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">They can be easily transported from one room to another or taken outdoors</p>
+          <p className="mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">This makes them ideal for small spaces like bedrooms, offices, and outdoor areas.</p>
+          <div className="font-bold text-lg mt-5 text-left headingFont mx-4">Low Maintenance</div>
+          <p className="mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers require very little maintenance compared to traditional air conditioners.</p>
+          <p className=" mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">They do not have filters that need to be replaced, and they have a simple water tank that needs to be refilled regularly.</p>
+          <div className="font-bold text-lg mt-5 text-left headingFont mx-4">Cost-Effective</div>
+          <p className="mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">Mini air coolers are generally less expensive than traditional air conditioners, making them a cost-effective cooling solution for small spaces.</p>
+          <p className=" mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">They also do not require professional installation, which can save on installation costs.</p>
         </section>
 
         <section className='w-full px-4 flex flex-col gap-y-5'>
-          <div className="text-2xl font-medium headingFont">Make Your Purchase Now</div>
-          <div className="opacity-80 font-light mb-5 bodyFont">Place your order with the product you wish to purchase and you will get feedback shortly after.</div>
-          <input className='bodyFont border rounded w-full text-lg py-2 px-4 shadow' type="email" placeholder='Email address' />
-          <input className='bodyFont border rounded w-full text-lg py-2 px-4 shadow' type="text" placeholder='Phone Number' />
-          <textarea rows="4" className='bodyFont border rounded w-full text-lg py-2 px-4 shadow' placeholder='Message'></textarea>
+          <div className="text-xl font-medium headingFont">Make Your Purchase Now</div>
+          <div className="opacity-80 font-light text-sm mb-5 bodyFont">Place your order with the product you wish to purchase and you will get feedback shortly after.</div>
+          <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="email" placeholder='Email address' />
+          <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="text" placeholder='Phone Number' />
+          <textarea rows="4" className='bodyFont border rounded w-full text-base py-2 px-4 shadow' placeholder='Message'></textarea>
         </section>
         <footer className='border-t mt-24 pt-14 flex flex-col items-center justify-center'>
           <div className="w-[40%]">

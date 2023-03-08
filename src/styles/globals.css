@@ -20,20 +20,21 @@ img{
 .carousel-promo{
   background: url(/images/fan2pics.jpeg) top center;
   background-size: cover;
-  @apply text-white mb-32 h-[60vh] py-5 flex flex-col justify-center;
+  @apply text-white mb-32 h-[50vh] flex flex-col items-start justify-center;
 }
 
 .card{
-  @apply shadow-md rounded flex flex-col items-center gap-y-8 py-5 w-[50%] text-center;
+  @apply shadow-md rounded flex flex-col items-center gap-y-4 py-8 w-[50%] text-center;
 }
 
 .card img {
-  width: 64px;
+  width: 48px;
 }
 
 .banner2{
   background: url(/images/banner2.jpeg) center;
   background-size: cover;
+  background-attachment: fixed;
   @apply text-white mb-32 pt-20 pb-4
 }
 
