@@ -2,8 +2,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import {HiOutlineMenuAlt3} from 'react-icons/hi'
 
@@ -49,18 +49,18 @@ export default function Home() {
         </section>
 
       
-        <Carousel autoplay={true}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={true}>
+        <Carousel showIndicators={true} autoPlay={true} interval={3000}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={true}>
               <div className="carousel-promo mt-12 px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
                 <h2 className='text-4xl leading-[1] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
                 <p className='text-lg leading-[1.5] mb-5 z-10 bodyFont'>The Arctic Air Mini Air Cooler Ultra is a compact and portable air cooling device that is designed to provide a cool and refreshing breeze during hot days. This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
-                <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
+                <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
               </div>
               <div className="carousel-promo mt-12 px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
-                <h2 className='text-4xl leading-[1] mb-5 z-10 headingFont'>Our Mini Air Cooler has a sleek and modern design.</h2>
+                <h2 className='text-4xl leading-[1] mb-5 z-10 headingFont'>Sleek and Modern design.</h2>
                 <p className='text-lg leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease. It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
-                <AiFillPlayCircle color='#ed3030' size='4.5rem'/>
+                <AiFillPlayCircle color='#ed3030' size='5.35rem'/>
               </div>
         </Carousel>
         
