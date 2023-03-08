@@ -24,11 +24,23 @@ img{
 }
 
 .card{
-  @apply shadow-md rounded py-10 px-10 text-center;
+  @apply shadow-md rounded flex flex-col items-center gap-y-8 py-5 w-[50%] text-center;
+}
+
+.card img {
+  width: 64px;
 }
 
 .banner2{
   background: url(/images/banner2.jpeg) center;
   background-size: cover;
   @apply text-white mb-32 pt-20 pb-4
+}
+
+.headingFont{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bodyFont {
+  font-family: 'Nunito', sans-serif;
 }
