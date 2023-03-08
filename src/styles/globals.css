@@ -20,7 +20,7 @@ img{
 .carousel-promo{
   background: url(/images/fan2pics.jpeg) top center;
   background-size: cover;
-  @apply text-white mt-20 mb-32 h-[50vh] py-10 flex flex-col items-start justify-center;
+  @apply text-white mt-20 mb-32 py-10 flex flex-col items-start justify-center;
 }
 
 .card{
@@ -35,7 +35,7 @@ img{
   background: url(/images/banner2.jpeg) center;
   background-size: cover;
   background-attachment: fixed;
-  @apply text-white mb-32 pt-20 pb-4
+  @apply text-white mb-32 py-12;
 }
 
 .headingFont{
