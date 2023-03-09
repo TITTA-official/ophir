@@ -23,11 +23,11 @@ export default function Home() {
     if (completed) {
       //Render a completed state
       return (
-        <span>Discount Expired</span>
+        <span className='text-base leading-snug'>Discount Expired</span>
       )
     } else {
       //Render a countdown
-      return <span>{hours}:{minutes}:{seconds}</span>
+      return <span >{hours}:{minutes}:{seconds}</span>
     }
   }
 
@@ -69,6 +69,16 @@ export default function Home() {
             </ul>
           </div>
         </div>
+        <div className="mt-5 flex w-[80%] mx-auto justify-between items-center bg-gray-100 rounded py-2 px-4">
+            <div className="bodyFont text-sm "> Discounted Price - <span className="text-lg text-[#ed3030]">N25,000</span></div>
+            <div className=" headingFont text-[red] text-xl">
+              <Countdown
+                intervalDelay={0}
+                date={Date.now() + 10000}
+                renderer = {renderer}
+              />
+            </div>
+          </div>
       <main className=' text-[#3A3A3A]'>
         <section  className="hero w-full flex flex-col gap-y-7 items-center mt-14 px-4">
           <h4 className='text-lg bodyFont text-[#ed3030] font-bold text-center'>Why suffer through the sweltering daily heat?</h4>
@@ -206,7 +216,7 @@ export default function Home() {
             <div className=" headingFont text-[red] text-3xl">
               <Countdown
                 intervalDelay={0}
-                date={Date.now() + 100000}
+                date={Date.now() + 10000}
                 renderer = {renderer}
               />
             </div>
