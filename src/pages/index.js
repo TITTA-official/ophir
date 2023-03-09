@@ -1,6 +1,7 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
+import React, {useState} from 'react'
 
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -10,6 +11,12 @@ import {HiOutlineMenuAlt3} from 'react-icons/hi'
 import {AiFillPlayCircle} from 'react-icons/ai'
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showMenu = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <Head>
@@ -32,10 +39,21 @@ export default function Home() {
           <div className="navbrand">
             <Image src='/images/logo.png' className='w-[80%]' width={200} height={100}/>
           </div>
-          <div className="menu cursor-pointer">
+          <div onClick={() => showMenu()} className="menu cursor-pointer">
             <HiOutlineMenuAlt3 color='#ed3030' size='2.25rem'/>
           </div>
        
+          <div className={`navmenu shadow-2xl transition-all duration-500 absolute top-0 headingFont ${!isOpen ? ' -right-48': 'right-0  flex  bg-white w-[65vw] h-[100vh]'}`}>
+            <div onClick={() => showMenu()} className={`close absolute right-4 top-5 ${isOpen ? '' : 'hidden'}`}>
+              <Image src='/images/close.png' className='w-[80%]' width={200} height={100}/>
+            </div>
+            <ul className={`navlist ${!isOpen ? 'hidden': 'flex flex-col gap-y-14 mt-24 px-4'}`}>
+              <li className='cursor-pointer hover:text-[#ed3030]'>About</li>
+              <li className='cursor-pointer hover:text-[#ed3030]'>Features</li>
+              <li className='cursor-pointer hover:text-[#ed3030]'>Pricing</li>
+              <li className='cursor-pointer hover:text-[#ed3030]'>Specifications</li>
+            </ul>
+          </div>
         </div>
       <main className=' text-[#3A3A3A]'>
         <section className="hero w-full flex flex-col gap-y-7 items-center mt-14 px-4">
@@ -44,23 +62,27 @@ export default function Home() {
           <p className='px-4 bodyFont text-center leading-relaxed opacity-60'>Mini Air Cooler will provide you with the ultimate comfort and relief from the heat allowing you stay cool and comfortale no matter where you are!</p>
           <button className="cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
           <div className="fanpics w-[80%] -mt-10 -z-10">
-            <Image src="/images/fan.png" width={100} height={100}/>
+            <Image className='w-full' src="/images/fan.png" width={200} height={100}/>
           </div>
+
+
         </section>
 
       
         <Carousel autoPlay={true} showIndicators={false} interval={5500}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
               <div className="carousel-promo px-4 relative z-10 text-left">
-                <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
+                <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.45)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1.2] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
                 <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>The Arctic Air Mini Air Cooler Ultra is a compact and portable air cooling device that is designed to provide a cool and refreshing breeze during hot days. This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
                 <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
               </div>
-              <div className="carousel-promo px-4 relative z-10 text-left">
-                <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-20"></div>
+              <div className="carousel-promo2 px-4 relative z-10 text-left">
+                <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1] mb-5 z-10 headingFont'>Sleek and Modern design.</h2>
                 <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease. It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
-                <AiFillPlayCircle color='#ed3030' size='5.35rem'/>
+                <div className="w-[128px] -ml-4">
+                  <Image className='w-full' src="/images/play2.png"  width={200} height={100}/>
+                </div>
               </div>
         </Carousel>
         
@@ -76,13 +98,13 @@ export default function Home() {
         <section>
           <div className="w-full -mt-20 px-4">
               <div className='w-full flex items-center flex-col'>
-                <Image className='w-[80%]' src="/images/fan.png" width={100} height={100}/>
+                <Image className='w-[80%]' src="/images/arctic2.webp" width={100} height={100}/>
                 <h1 className='text-xl w-full text-left font-bold mt-5 mb-5 headingFont'>Compact & Lightweight</h1>
               </div>
               <div >
                 <p className='leading-relaxed opacity-60 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease.</p>
                 <div className="mt-10 flex justify-center">
-                  <Image className='w-[80%]' src="/images/fan.png" width={100} height={100}/>
+                  <Image className='w-[80%]' src="/images/arctic3.webp" width={100} height={100}/>
                 </div>
                 <h1 className='text-xl w-full  font-bold mb-5 mt-5 headingFont'>Charges Easily</h1>
                 <p className='leading-relaxed opacity-60 bodyFont'> It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
