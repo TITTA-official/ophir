@@ -8,8 +8,13 @@
   box-sizing: border-box;
 }
 
+html,body{
+  scroll-behavior: smooth!important;
+}
+
 body{
   overflow-x: hidden;
+  scroll-behavior: smooth!important;
 }
 
 img{
@@ -30,7 +35,7 @@ img{
 .carousel-promo2{
   background: url(/images/arctic3.webp) top center;
   background-size: cover;
-  @apply text-white mt-20 mb-32 py-10 flex flex-col items-start justify-center;
+  @apply text-white mt-20 mb-32 py-12 flex flex-col items-start justify-center;
 }
 .card{
   @apply shadow-md rounded flex flex-col items-center gap-y-4 py-8 w-[50%] text-center;

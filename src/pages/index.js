@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, {useState} from 'react'
+import Countdown from 'react-countdown'
 
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -9,12 +10,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import {HiOutlineMenuAlt3} from 'react-icons/hi'
 
 import {AiFillPlayCircle} from 'react-icons/ai'
+import Link from 'next/link';
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   const showMenu = () => {
     setIsOpen(!isOpen);
+  }
+
+  const renderer = ({hours, minutes, seconds, completed}) => {
+    if (completed) {
+      //Render a completed state
+      return (
+        <span>Discount Expired</span>
+      )
+    } else {
+      //Render a countdown
+      return <span>{hours}:{minutes}:{seconds}</span>
+    }
   }
 
   return (
@@ -48,19 +62,19 @@ export default function Home() {
               <Image src='/images/close.png' className='w-[80%]' width={200} height={100}/>
             </div>
             <ul className={`navlist ${!isOpen ? 'hidden': 'flex flex-col gap-y-14 mt-24 px-4'}`}>
-              <li className='cursor-pointer hover:text-[#ed3030]'>About</li>
-              <li className='cursor-pointer hover:text-[#ed3030]'>Features</li>
-              <li className='cursor-pointer hover:text-[#ed3030]'>Pricing</li>
-              <li className='cursor-pointer hover:text-[#ed3030]'>Specifications</li>
+              <Link href="#about"><li className='cursor-pointer hover:text-[#ed3030]'>About</li></Link>
+              <Link href="#pricing"><li className='cursor-pointer hover:text-[#ed3030]'>Pricing</li></Link>
+              <Link href="#specifications"><li className='cursor-pointer hover:text-[#ed3030]'>Specifications</li></Link>
+              <Link href="#purchase"><button className="mt-10 cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 rounded-full shadow-xl">Purchase Now</button></Link>
             </ul>
           </div>
         </div>
       <main className=' text-[#3A3A3A]'>
-        <section className="hero w-full flex flex-col gap-y-7 items-center mt-14 px-4">
+        <section  className="hero w-full flex flex-col gap-y-7 items-center mt-14 px-4">
           <h4 className='text-lg bodyFont text-[#ed3030] font-bold text-center'>Why suffer through the sweltering daily heat?</h4>
           <h1 className='text-3xl headingFont text-center'>When you can get our Mini Air Conditioner</h1>
           <p className='px-4 bodyFont text-center leading-relaxed opacity-60'>Mini Air Conditioner will provide you with the ultimate comfort and relief from the heat allowing you stay cool and comfortale no matter where you are!</p>
-          <button className="cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
+          <Link href="#purchase"><button className="mt-2 cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 rounded-full shadow-xl">Purchase Now</button></Link>
           <div className="fanpics relative  flex justify-center items-center w-[80%] -mt-10 -z-10">
           <div className="w-[128px] absolute -ml-4 cursor-pointer">
                   <Image className='w-full object-fit' src="/images/play2.png"  width={100} height={100}/>
@@ -72,12 +86,14 @@ export default function Home() {
         </section>
 
       
-        <Carousel autoPlay={true} showIndicators={false} interval={5500}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
+        <Carousel autoPlay={true} showIndicators={false} interval={7000}  infiniteLoop={true} showStatus={false} showArrows={false} swipeable={false}>
               <div className="carousel-promo px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.45)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1.2] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
                 <p className='text-[1.2rem] leading-[1.5] mb-5 z-10 bodyFont'>This innovative air conditioner is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
-                <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
+                <Link className="inline-block w-full" href='#purchase'>
+                  <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
+                </Link>
               </div>
               <div className="carousel-promo2 px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] -z-20"></div>
@@ -98,7 +114,7 @@ export default function Home() {
           <button className="mb-5 z-10 cta bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
         </div> */}
 
-        <section>
+        <section id="about">
           <div className="w-full -mt-20 px-4">
               <div className='w-full flex items-center flex-col'>
                 <Image className='w-[80%]' src="/images/arctic2.webp" width={100} height={100}/>
@@ -179,7 +195,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section className='banner2 z-20 relative w-full text-center'>
+        <section className=" px-4 mb-20 text-[#3A3A3A]">
+          <div className="headingFont font-bold text-xl text-[#3A3A3A]">
+              Pricing
+          </div>
+
+          <div className="bodyFont mt-3 line-through text-lg"> Original Price - <span className=" text-[#ed3030]">N40,000</span></div>
+          <div className="mt-3 flex w-full justify-between items-center bg-gray-100 rounded py-3 px-2">
+            <div className="bodyFont text-lg "> Discounted Price - <span className="text-2xl text-[#ed3030]">N25,000</span></div>
+            <div className=" headingFont text-[red] text-3xl">
+              <Countdown
+                intervalDelay={0}
+                date={Date.now() + 100000}
+                renderer = {renderer}
+              />
+            </div>
+          </div>
+          <Link className="mt-5 inline-block w-full" href='#purchase'>
+                  <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
+          </Link>
+        </section>
+
+        <section id='specifications' className='banner2 z-20 relative w-full text-center'>
           <div className="overlay -z-10 w-full  absolute bg-[rgba(0,0,0,0.62)] top-0 bottom-0"></div>
           <div className="z-20 text-[1.4rem] font-bold headingFont px-4">Arctic Mini Air Conditioner Specifications</div>
           <div className="z-20 mt-5 font-light text-sm opacity-70 bodyFont">Learn more about our product in details below.</div>
@@ -195,14 +232,15 @@ export default function Home() {
           <p className="mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">Mini air conditioners are generally less expensive than traditional air conditioners, making them a cost-effective cooling solution for small spaces.</p>
           <p className=" mt-2 text-base font-light text-left leading-relaxed bodyFont mx-4">They also do not require professional installation, which can save on installation costs.</p>
         </section>
+        
 
-        <section className='w-full px-4 flex flex-col gap-y-5'>
+        <section id='purchase' className='w-full px-4 flex flex-col gap-y-5'>
           <div className="text-xl font-medium headingFont">Make Your Purchase Now</div>
           <div className="opacity-80 font-light text-sm mb-5 bodyFont">Place your order with the product you wish to purchase and you will get feedback shortly after.</div>
           <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="text" placeholder='Name *' required/>
           <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="text" placeholder='Phone Number' />
           <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="email" placeholder='Email address *' required />
-          <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="number" placeholder='Number of Items e.g: 5 *' required/>
+          <input className='bodyFont border rounded w-full text-base py-2 px-4 shadow' type="number"  placeholder='Number of Items e.g: 5 *' required min="0" />
           <textarea rows="4" className='bodyFont border rounded w-full text-base py-2 px-4 shadow' placeholder='Address *' required></textarea>
           <button className="cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Place Order Now</button>
         </section>
