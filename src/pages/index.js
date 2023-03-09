@@ -61,7 +61,10 @@ export default function Home() {
           <h1 className='text-3xl headingFont text-center'>When you can get our Mini Air Cooler</h1>
           <p className='px-4 bodyFont text-center leading-relaxed opacity-60'>Mini Air Cooler will provide you with the ultimate comfort and relief from the heat allowing you stay cool and comfortale no matter where you are!</p>
           <button className="cta bodyFont bg-[#ed3030] outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl">Purchase Now</button>
-          <div className="fanpics w-[80%] -mt-10 -z-10">
+          <div className="fanpics relative  flex justify-center items-center w-[80%] -mt-10 -z-10">
+          <div className="w-[128px] absolute -ml-4 cursor-pointer">
+                  <Image className='w-full object-fit' src="/images/play2.png"  width={100} height={100}/>
+                </div>
             <Image className='w-full' src="/images/fan.png" width={200} height={100}/>
           </div>
 
@@ -73,15 +76,15 @@ export default function Home() {
               <div className="carousel-promo px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.45)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1.2] mb-5 z-10 headingFont'>Experience maximum comfort easily</h2>
-                <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>The Arctic Air Mini Air Cooler Ultra is a compact and portable air cooling device that is designed to provide a cool and refreshing breeze during hot days. This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
+                <p className='text-[1.2rem] leading-[1.5] mb-5 z-10 bodyFont'>This innovative air cooler is designed to be used on a desk or bedside table, making it perfect for small spaces such as hostels, apartments, shops and offices.</p>
                 <button className="mb-5 z-10 cta bg-[#ed3030] bodyFont outline-none border-none text-white text-lg px-9 py-4 mt-2 rounded-full shadow-xl w-[50%]">Purchase Now</button>
               </div>
               <div className="carousel-promo2 px-4 relative z-10 text-left">
                 <div className="overlay absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] -z-20"></div>
                 <h2 className='text-[1.75rem] leading-[1] mb-5 z-10 headingFont'>Sleek and Modern design.</h2>
-                <p className='text-base leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease. It can be powered using a USB cable, making it compatible with most power sources such as laptops, power banks, and wall adapters.</p>
-                <div className="w-[128px] -ml-4">
-                  <Image className='w-full' src="/images/play2.png"  width={200} height={100}/>
+                <p className='text-[1.2rem] leading-[1.5] mb-5 z-10 bodyFont'>One of the standout features of the Arctic Air Mini Air Cooler Ultra is its portability. The device is compact and lightweight, allowing you to move it from room to room with ease.</p>
+                <div className="w-[84px] -ml-4">
+                  <Image className='w-full' src="/images/play2.png"  width={100} height={100}/>
                 </div>
               </div>
         </Carousel>
